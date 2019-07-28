@@ -1,16 +1,34 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, Injector } from '@angular/core';
+import { createCustomElement } from '@angular/elements';
 
 import { AppComponent } from './app.component';
+import { PostsComponent } from './component/posts/posts.component';
+import { PostComponent } from './component/post/post.component';
+import { HttpClientModule } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PostsComponent,
+    PostComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: environment.webComponent ? [] : [AppComponent],
+  entryComponents: environment.webComponent ? [PostsComponent, PostComponent] : []
 })
-export class AppModule { }
+export class AppModule {
+  constructor(private injector: Injector) {
+
+  }
+
+  ngDoBootstrap() {
+    const element: any = createCustomElement(PostsComponent, { injector: this.injector });
+    customElements.define('ng-web-component', element);
+  }
+}
