@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 import * as Highcharts from 'highcharts';
 
@@ -8,6 +8,8 @@ import * as Highcharts from 'highcharts';
   styleUrls: ['./graph.component.css']
 })
 export class GraphComponent implements OnInit {
+  @Input() readonly seriesOptions: Array<Highcharts.SeriesOptionsType> = [];
+
   Highcharts = Highcharts;
 
   chartOptions: Highcharts.Options = {
@@ -51,7 +53,8 @@ export class GraphComponent implements OnInit {
         name: 'Zootopia',
         data: [22.0, 23.2, 20.7, 22.5, 23.3, 24.9, 20.0, 17.6, 14.2, 13.3, 10.6, 7.8],
         type: 'line'
-      }
+      },
+      ...this.seriesOptions
     ],
     credits: {
       enabled: false

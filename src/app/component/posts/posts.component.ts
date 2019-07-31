@@ -1,6 +1,7 @@
-import { Component, OnInit, ChangeDetectionStrategy, ViewEncapsulation, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, ViewEncapsulation, ChangeDetectorRef, Input } from '@angular/core';
 import { AjaxService } from 'src/app/service/ajax.service';
 import { Observable } from 'rxjs';
+import { SeriesOptionsType } from 'highcharts';
 
 @Component({
   selector: 'app-posts',
@@ -10,6 +11,8 @@ import { Observable } from 'rxjs';
   encapsulation: ViewEncapsulation.ShadowDom
 })
 export class PostsComponent implements OnInit {
+  @Input() chartData: Array<SeriesOptionsType> = [];
+  
   posts$: Observable<any>;
 
   constructor(private ajaxService: AjaxService, private cdRef: ChangeDetectorRef) { }

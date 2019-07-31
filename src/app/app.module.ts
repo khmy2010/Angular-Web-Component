@@ -9,13 +9,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { GraphComponent } from './component/graph/graph.component';
 import { HighchartsChartModule } from 'highcharts-angular';
+import { GraphDataComponent } from './graph-data/graph-data.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PostsComponent,
     PostComponent,
-    GraphComponent
+    GraphComponent,
+    GraphDataComponent
   ],
   imports: [
     BrowserModule,
