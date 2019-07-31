@@ -7,20 +7,24 @@ import { PostsComponent } from './component/posts/posts.component';
 import { PostComponent } from './component/post/post.component';
 import { HttpClientModule } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
+import { GraphComponent } from './component/graph/graph.component';
+import { HighchartsChartModule } from 'highcharts-angular';
 
 @NgModule({
   declarations: [
     AppComponent,
     PostsComponent,
-    PostComponent
+    PostComponent,
+    GraphComponent
   ],
   imports: [
     BrowserModule,
+    HighchartsChartModule,
     HttpClientModule
   ],
   providers: [],
   bootstrap: environment.webComponent ? [] : [AppComponent],
-  entryComponents: environment.webComponent ? [PostsComponent, PostComponent] : []
+  entryComponents: environment.webComponent ? [PostsComponent] : []
 })
 export class AppModule {
   constructor(private injector: Injector) {
