@@ -7,10 +7,98 @@
     <title>Vanila + Angular</title>
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://unpkg.com/zone.js@0.9.1/dist/zone.min.js"></script>
   </head>
   <body>
     <ng-web-component></ng-web-component>
+    <div class="container">
+      <div class="row w-100">
+        <div class="col">
+          <div class="form-group">
+            <input class="form-control form-control-lg text-center" type="number">
+            <small class="form-text text-muted text-center font-weight-bold">Jan</small>
+          </div>    
+        </div>
+        <div class="col">
+          <div class="form-group">
+            <input class="form-control form-control-lg text-center" type="number">
+            <small class="form-text text-muted text-center font-weight-bold">Feb</small>
+          </div>    
+        </div>
+        <div class="col">
+          <div class="form-group">
+            <input class="form-control form-control-lg text-center" type="number">
+            <small class="form-text text-muted text-center font-weight-bold">Mar</small>
+          </div>    
+        </div>
+        <div class="col">
+          <div class="form-group">
+            <input class="form-control form-control-lg text-center" type="number">
+            <small class="form-text text-muted text-center font-weight-bold">Apr</small>
+          </div>    
+        </div>
+        <div class="w-100 d-lg-none mt-4 mb-4"></div>
+        <div class="col">
+          <div class="form-group">
+            <input class="form-control form-control-lg text-center" type="number">
+            <small class="form-text text-muted text-center font-weight-bold">May</small>
+          </div>    
+        </div>
+        <div class="col">
+          <div class="form-group">
+            <input class="form-control form-control-lg text-center" type="number">
+            <small class="form-text text-muted text-center font-weight-bold">Jun</small>
+          </div>    
+        </div>
+        <div class="w-100 d-none d-lg-block d-xl-block mt-4 mb-4"></div>
+        <div class="col">
+          <div class="form-group">
+            <input class="form-control form-control-lg text-center" type="number">
+            <small class="form-text text-muted text-center font-weight-bold">July</small>
+          </div>    
+        </div>
+        <div class="col">
+          <div class="form-group">
+            <input class="form-control form-control-lg text-center" type="number">
+            <small class="form-text text-muted text-center font-weight-bold">Aug</small>
+          </div>    
+        </div>
+        <div class="w-100 d-lg-none mt-4 mb-4"></div>
+        <div class="col">
+          <div class="form-group">
+            <input class="form-control form-control-lg text-center" type="number">
+            <small class="form-text text-muted text-center font-weight-bold">Sept</small>
+          </div>    
+        </div>
+        <div class="col">
+          <div class="form-group">
+            <input class="form-control form-control-lg text-center" type="number">
+            <small class="form-text text-muted text-center font-weight-bold">Oct</small>
+          </div>    
+        </div>
+        <div class="col">
+          <div class="form-group">
+            <input class="form-control form-control-lg text-center" type="number">
+            <small class="form-text text-muted text-center font-weight-bold">Nov</small>
+          </div>    
+        </div>
+        <div class="col">
+          <div class="form-group">
+            <input class="form-control form-control-lg text-center" type="number">
+            <small class="form-text text-muted text-center font-weight-bold">Dec</small>
+          </div>    
+        </div>
+      </div>
+      <div class="w-100 mt-3 mb-3 d-none" id="error">
+        <p class="mb-0 font-weight-bold text-danger">All fields are required.</p>
+      </div>
+      <div class="d-flex justify-content-center align-items-center mt-5 mb-5">
+        <button type="button" class="btn btn-primary btn-lg btn-block">Submit to Web Component</button>
+      </div>
+    </div>
     <script src="client.js"></script>
     <script src="ng-web-comp.js"></script>
   </body>

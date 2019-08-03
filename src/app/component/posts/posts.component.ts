@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy, ViewEncapsulation, ChangeDetectorRef, Input } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, ViewEncapsulation, ChangeDetectorRef, Input, SimpleChanges } from '@angular/core';
 import { AjaxService } from 'src/app/service/ajax.service';
 import { Observable } from 'rxjs';
 import { SeriesOptionsType } from 'highcharts';
@@ -11,7 +11,9 @@ import { SeriesOptionsType } from 'highcharts';
   encapsulation: ViewEncapsulation.ShadowDom
 })
 export class PostsComponent implements OnInit {
-  @Input() chartData: Array<SeriesOptionsType> = [];
+  @Input() chartdata: string = '';
+
+  validatedChartData: Array<number> = [];
   
   posts$: Observable<any>;
 
@@ -19,6 +21,23 @@ export class PostsComponent implements OnInit {
 
   ngOnInit() {
     this.posts$ = this.ajaxService.findPosts();
+    this.cdRef.markForCheck();
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes.chartdata) {
+      try {
+        const parsed = JSON.parse(this.chartdata);
+
+        if (Array.isArray(parsed)) {
+          this.validatedChartData = [...parsed];
+        }
+      }
+      catch(_) {
+        console.error('failed in parsing.');
+      }
+    }
+    
     this.cdRef.markForCheck();
   }
 

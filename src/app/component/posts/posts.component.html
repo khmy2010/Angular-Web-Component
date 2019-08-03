@@ -1,6 +1,5 @@
 <div class="container">
-  <app-graph></app-graph>
-
+  <app-graph [seriesOptions]="validatedChartData"></app-graph>
   <!-- <div class="columns is-mobile is-multiline is-vcentered" *ngIf="(posts$ | async) as posts else loadingTemplate">
     <div class="column is-two-fifths" *ngFor="let post of posts">
       <app-post [postData]="post"></app-post>

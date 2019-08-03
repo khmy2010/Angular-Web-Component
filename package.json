@@ -9,7 +9,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "serve": "http-server ./elements --gzip -o"
+    "serve": "http-server ./elements --gzip -o",
+    "vanila-dev": "node start-vanila-server.js"
   },
   "private": true,
   "dependencies": {
@@ -49,6 +50,7 @@
     "karma-coverage-istanbul-reporter": "~2.0.1",
     "karma-jasmine": "~2.0.1",
     "karma-jasmine-html-reporter": "^1.4.0",
+    "live-server": "^1.2.1",
     "protractor": "~5.4.0",
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
